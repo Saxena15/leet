@@ -1,0 +1,24 @@
+class Solution {
+    public int maxArea(int[] height) {
+      
+    
+    int sum = 0,start=0,end=height.length-1,side=0,ans=0;
+    while(start<end){
+        sum=end-start;
+        if(height[start]<height[end]){
+            side=height[start];
+            start++;
+        }
+        else{
+            side=height[end];
+            end--;
+        }
+        sum*=side;
+        if(sum>ans) ans=sum;
+        
+        
+    }
+    return ans;
+    
+}
+}
